@@ -5,4 +5,6 @@ import todo
 todo.add("a"); todo.add("b")
 todo.done(2)
 assert todo.load() == [{"text": "a", "done": False}, {"text": "b", "done": True}]
+todo.clear_done()
+assert todo.load() == [{"text": "a", "done": False}]
 print("ok")

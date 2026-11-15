@@ -10,6 +10,7 @@ the Git feature-branch workflow: branches, commits, merges and GitHub.
 - Add tasks
 - List tasks
 - Mark tasks as done
+- Clear finished tasks (`python todo.py clear`)
 - Tasks are saved to `tasks.json`
 
 ## Usage

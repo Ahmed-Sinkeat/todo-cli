@@ -29,6 +29,10 @@ def done(n):
     save(tasks)
 
 
+def clear_done():
+    save([t for t in load() if not t["done"]])
+
+
 def list_tasks():
     for i, t in enumerate(load(), 1):
         print(f"{i}. [{'x' if t['done'] else ' '}] {t['text']}")
@@ -41,8 +45,10 @@ def main(argv):
         list_tasks()
     elif len(argv) == 3 and argv[1] == "done" and argv[2].isdigit():
         done(int(argv[2]))
+    elif len(argv) == 2 and argv[1] == "clear":
+        clear_done()
     else:
-        print("usage: todo.py add <text> | list | done <n>")
+        print("usage: todo.py add <text> | list | done <n> | clear")
 
 
 if __name__ == "__main__":
